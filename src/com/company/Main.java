@@ -28,7 +28,7 @@ public class Main {
         System.out.println("Introduceti un an:");
         int year = sc.nextInt();
         if (checkIfYearIsLead(year)) {
-            System.out.println("Bisect");
+            System.out.println("Bisect 100%");
             printNextLeapYears(year);
 
         } else {
