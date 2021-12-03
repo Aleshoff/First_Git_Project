@@ -32,7 +32,7 @@ public class Main {
             printNextLeapYears(year);
 
         } else {
-            System.out.println("Nu este bisect");
+            System.out.println("Nu este bisect absolut deloc");
         }
     }
 }
