@@ -3,36 +3,43 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-    public static void printNextLeapYears (int year) {
-        int count = 0;
 
-        while (count < 20) {
-            year++;
-             if (checkIfYearIsLead(year)){
-                System.out.println("Anul # " + (count + 1) + " " + year);
-                count++;
+    public static void printNextLeapYears () {
+        int i = 0;
+        int year = inputYear();
+
+        if (checkIfLeapYear(year)){
+            System.out.println("It is a leap year");
+            System.out.println("There are the next 20 leap years");
+            while (i < 20) {
+                System.out.println("Year #" + (i + 1) + " " + year);
+                year += 4;
+                i++;
             }
+        } else {
+            System.out.println("It is not a leap year");
         }
     }
-    public static boolean checkIfYearIsLead (int year) {
-        boolean isLeapYear = false;
+
+    public static boolean checkIfLeapYear (int year) {
+        /*boolean isLeapYear = false;
         if(year % 4 == 0) {
             isLeapYear = true;
         }
-        return isLeapYear;
+        return isLeapYear;*/
+
+        return year % 4 == 0;
+    }
+
+    public static int inputYear(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input a year: ");
+        return sc.nextInt();
     }
 
     public static void main(String[] args) {
-        // Afisare urmatorilor 20 de ani bisecti
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduceti un an:");
-        int year = sc.nextInt();
-        if (checkIfYearIsLead(year)) {
-            System.out.println("Bisect 100%");
-            printNextLeapYears(year);
+        // Program that prints the next 20 leap years
+        printNextLeapYears();
 
-        } else {
-            System.out.println("Nu este bisect absolut deloc");
-        }
     }
 }
